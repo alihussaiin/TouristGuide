@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Tourist Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <h1>Turistguide</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">Om</a></li>
+            <li><a href="#attractions">Attraktioner</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2>Om Turistguiden</h2>
+        <p>
+            Turistguiden er et onlineværktøj, der giver dig adgang til en liste over udvalgte turistattraktioner i Danmark. Den dækker forskellige destinationer og tilbyder oplysninger til alle typer rejsende, uanset om du er interesseret i kulturelle seværdigheder, sport, shopping eller forlystelsesparker.
+        </p>
+    </section>
+
+    <section id="attractions">
+        <h2>Udvalgte Turistattraktioner</h2>
+        <ul>
+            <li><a href="https://www.tivoli.dk/">Tivoli</a></li>
+            <li><a href="https://www.parken.dk">Parken</a></li>
+            <li><a href="https://da.wikipedia.org/wiki/Str%C3%B8get_(K%C3%B8benhavn)">Strøget</a></li>
+            <li><a href="#">Fields</a></li> <!-- Dette skal du muligvis opdatere med det korrekte link -->
+        </ul>
+    </section>
+
+    <section id="endpoints">
+        <h2>Funktioner</h2>
+        <ul>
+            <li><a href="/attractions">Alle Turistattraktioner</a></li>
+            <li><a href="/attractions/{name}">Vis Turistattraktion</a></li>
+            <li><a href="/attractions/delete/{description}">Slet Turistattraktion</a></li>
+            <li><a href="/attractions/{name}/tags">Tags for Turistattraktion</a></li>
+            <li><a href="/attractions/{name}/edit">Rediger Turistattraktion</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Ved spørgsmål kontakt os på nedenstående.</p>
+    <p>Kontakt: info@turistguide.com</p>
+    <p>Tlf: 25 44 26 77</p>
+</footer>
+
+</body>
+</html>
