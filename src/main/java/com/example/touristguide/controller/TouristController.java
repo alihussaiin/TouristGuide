@@ -1,7 +1,8 @@
 package com.example.touristguide.controller;
 
 import com.example.touristguide.model.TouristAttraction;
-import com.example.touristguide.service.TouristService;
+import com.example.touristguide.service.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
