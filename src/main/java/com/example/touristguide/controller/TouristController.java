@@ -6,30 +6,38 @@ import com.example.touristguide.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("attractions")
 public class TouristController {
 
-    @Autowired
-    private TouristService touristService;
+
+    private  final TouristService touristService;
+
+    public TouristController(TouristService touristService) {
+        this.touristService = touristService;
+    }
 
     // CREATE endpoints
-    @PostMapping("/add")
+
+    @GetMapping("")
+    public String getAllAttractions(Model model) {
+        List<TouristAttraction> attractions = touristService.getAllAttractions();
+        model.addAttribute("attractions", attractions);
+        return "attractionList"; // Returnerer navnet på Thymeleaf-skabelonen
+    }
+
+    /*@PostMapping("/add")
     public ResponseEntity<TouristAttraction> createAttraction(@RequestBody TouristAttraction attraction) {
         TouristAttraction createdAttraction = touristService.createAttraction(attraction);
         return new ResponseEntity<>(createdAttraction, HttpStatus.CREATED);
     }
 
-    // READ endpoints
-    @GetMapping
-    public ResponseEntity<List<TouristAttraction>> getAllAttractions() {
-        List<TouristAttraction> attractions = touristService.getAllAttractions();
-        return new ResponseEntity<>(attractions, HttpStatus.OK);
-    }
 
     @GetMapping("/description/{description}")
     public ResponseEntity<TouristAttraction> getAttractionByDescription(@PathVariable String description) {
@@ -107,5 +115,7 @@ public class TouristController {
     public ResponseEntity<String> getEditAttractionPage(@PathVariable String name) {
         // Tilføj logik for at hente og vise redigeringsformular
         return new ResponseEntity<>("Edit page for " + name, HttpStatus.OK);
-    }
+    } */
+
+
 }

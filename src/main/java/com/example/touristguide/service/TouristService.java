@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class TouristService {
 
-    @Autowired
-    private TouristRepository repository;
+
+    private final  TouristRepository repository;
+
+    public TouristService(TouristRepository repository) {
+        this.repository = repository;
+    }
 
     public ArrayList<TouristAttraction> getAllAttractions() {
         List<TouristAttraction> attractionsList = repository.getAttractionsList();
