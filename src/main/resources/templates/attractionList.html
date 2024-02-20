@@ -33,7 +33,11 @@
     </tr>
 
     <tr th:each="attraction : ${attractions}">
-        <td th:text="${attraction.name}">Attraktion Navn</td>
+        <td>
+            <a th:href="@{'/attractions/' + ${attraction.name}}"> <!-- Link til detaljeside for attraktion -->
+                <span th:text="${attraction.name}">Attraktion Navn</span>
+            </a>
+        </td>
         <td th:text="${attraction.description}" class="description-column">Attraktion Beskrivelse</td>
     </tr>
 </table>

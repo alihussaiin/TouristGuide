@@ -41,6 +41,7 @@ public class TouristService {
         return true;
     }
 
+
     public List<TouristAttraction> getAttractionsByName(String name) {
         return repository.getByName(name);
     }
@@ -59,4 +60,17 @@ public class TouristService {
     public List<String> getAttractionTagsByName(String name) {
         return repository.getAllTagsByName(name);
     }
+    public String getEditAttractionPage(String name) {
+        TouristAttraction attraction = repository.getAttractionByName(name);
+        if (attraction != null) {
+            // Formater attraktionens data til redigeringssiden
+            String editPageContent = "Edit Page for: " + attraction.getName() + "\n";
+            editPageContent += "Description: " + attraction.getDescription();
+            return editPageContent;
+        } else {
+            // Returner null eller en fejlmeddelelse, hvis attraktionen ikke blev fundet
+            return null;
+        }
+    }
+
 }
