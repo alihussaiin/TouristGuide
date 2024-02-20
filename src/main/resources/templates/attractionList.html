@@ -2,6 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+        <meta charset="UTF-8">
+        <title>Add Attraction</title>
+
     <meta charset="UTF-8">
     <title>Attraction List</title>
     <style>
@@ -15,7 +18,7 @@
             text-align: left;
         }
         .description-column {
-            max-width: 300px; /* Just an example, adjust as needed */
+            max-width: 200px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -38,9 +41,12 @@
                 <span th:text="${attraction.name}">Attraktion Navn</span>
             </a>
         </td>
+
         <td th:text="${attraction.description}" class="description-column">Attraktion Beskrivelse</td>
     </tr>
 </table>
+
+<button type="submit">Tilføj Attraktion</button>
 
 </body>
 

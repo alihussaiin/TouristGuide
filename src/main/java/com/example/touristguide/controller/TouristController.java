@@ -2,10 +2,6 @@ package com.example.touristguide.controller;
 
 import com.example.touristguide.model.TouristAttraction;
 import com.example.touristguide.service.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +16,7 @@ public class TouristController {
     private  final TouristService touristService;
 
     public TouristController(TouristService touristService) {
+
         this.touristService = touristService;
     }
 
