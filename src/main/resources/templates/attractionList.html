@@ -29,10 +29,12 @@
 <body>
 
 <h1>Turist Attraktioner</h1>
+
 <table>
     <tr>
         <th>Navn</th>
         <th class="description-column">Beskrivelse</th>
+        <th></th>
     </tr>
 
     <tr th:each="attraction : ${attractions}">
@@ -41,9 +43,12 @@
                 <span th:text="${attraction.name}">Attraktion Navn</span>
             </a>
         </td>
-
         <td th:text="${attraction.description}" class="description-column">Attraktion Beskrivelse</td>
+        <td>
+            <button type="button"> Tags</button>
+        </td>
     </tr>
+
 </table>
 
 <button type="submit">Tilføj Attraktion</button>
