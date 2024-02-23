@@ -7,23 +7,9 @@
 
     <meta charset="UTF-8">
     <title>Attraction List</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        .description-column {
-            max-width: 200px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-    </style>
+    <link th:href="@{/main.css}" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -39,7 +25,7 @@
 
     <tr th:each="attraction : ${attractions}">
         <td>
-            <a th:href="@{'/attractions/' + ${attraction.name}}"> <!-- Link til detaljeside for attraktion -->
+            <a th:href="@{'/attractions/' + ${attraction.name}}">
                 <span th:text="${attraction.name}">Attraktion Navn</span>
             </a>
         </td>

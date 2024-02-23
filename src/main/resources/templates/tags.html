@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tags for Turistattraktion</title>
+</head>
+
+<body>
+
+<h1>Tags for turistattraktion: <span th:text="${attractionName}"></span></h1>
+<ul>
+    <li th:each="tag : ${tags}" th:text="${tag}"></li>
+</ul>
+
+<a th:href="@{/attractions}">Tilbage til oversigten</a>
+
+</body>
+
+</html>
