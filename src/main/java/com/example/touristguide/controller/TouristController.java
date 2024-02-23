@@ -95,7 +95,7 @@ public class TouristController {
             model.addAttribute("tags", tags);
             return "tags";
         } else {
-            return "attractionNotFound";
+            return "redirect:/attractions";
         }
     }
 
@@ -104,6 +104,12 @@ public class TouristController {
         String editPageContent = touristService.getEditAttractionPage(name);
         model.addAttribute("editContent", editPageContent);
         return "editPage";
+    }
+
+    @PostMapping("/save")
+    public String saveAttraction(@ModelAttribute TouristAttraction attraction) {
+        touristService.createAttraction(attraction);
+        return "redirect:/attractions";
     }
 
 

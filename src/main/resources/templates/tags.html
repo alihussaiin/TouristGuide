@@ -1,36 +1,27 @@
-<!--<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Tags for Turistattraktion</title>
-</head>
-
-<body>
-
-<h1>Tags for turistattraktion: <span th:text="${attractionName}"></span></h1>
-<ul>
-    <li th:each="tag : ${tags}" th:text="${tag}"></li>
-</ul>
-
-<a th:href="@{/attractions}">Tilbage til oversigten</a>
-
-</body>
-
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Tag List</title>
+    <title>Tags</title>
 </head>
+
 <body>
-<h1>Tag List</h1>
-<ul>
-    <li th:each="tag : ${tags}" th:text="${tag}"></li>
-</ul>
-<a th:href="@{/attractions}" class="btn btn-primary">Tilbage</a>
+
+<h1>Tags</h1>
+
+<table border="1">
+    <tr th:each="tag : ${tags}">
+        <td th:text="${tag}"></td>
+    </tr>
+</table>
+<a th:href="@{/attractions}" ></a>
+</tr>
+
+</table>
+
+<a th:href="@{/attractions}" ><button type="button">Tilbage</button></a>
+
 </body>
+
 </html>
