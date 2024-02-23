@@ -93,9 +93,9 @@ public class TouristController {
         List<String> tags = touristService.getAttractionTagsByName(name);
         if (!tags.isEmpty()) {
             model.addAttribute("tags", tags);
-            return "tagsList";
+            return "tags";
         } else {
-            return "tagsNotFound";
+            return "attractionNotFound";
         }
     }
 

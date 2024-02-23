@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -17,4 +17,20 @@
 
 </body>
 
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tag List</title>
+</head>
+<body>
+<h1>Tag List</h1>
+<ul>
+    <li th:each="tag : ${tags}" th:text="${tag}"></li>
+</ul>
+<a th:href="@{/attractions}" class="btn btn-primary">Tilbage</a>
+</body>
 </html>

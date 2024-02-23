@@ -2,14 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-        <meta charset="UTF-8">
-        <title>Add Attraction</title>
-
     <meta charset="UTF-8">
     <title>Attraction List</title>
     <link th:href="@{/main.css}" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -25,19 +20,28 @@
 
     <tr th:each="attraction : ${attractions}">
         <td>
-            <a th:href="@{'/attractions/' + ${attraction.name}}">
+            <a th:href="@{'attractions/' + ${attraction.name}}">
                 <span th:text="${attraction.name}">Attraktion Navn</span>
             </a>
         </td>
         <td th:text="${attraction.description}" class="description-column">Attraktion Beskrivelse</td>
         <td>
-            <button type="button"> Tags</button>
+            <a th:href="@{'attractions/' + ${attraction.name} + '/tags'}">
+                <button type="button">Tags</button>
+            </a>
         </td>
     </tr>
-
 </table>
 
 <button type="submit">Tilføj Attraktion</button>
+
+<div th:if="${tags}">
+    <h2>Tags for Attraktion</h2>
+    <ul>
+        <li th:each="tag : ${tags}" th:text="${tag}"></li>
+    </ul>
+    <a href="attractions">Tilbage</a>
+</div>
 
 </body>
 
