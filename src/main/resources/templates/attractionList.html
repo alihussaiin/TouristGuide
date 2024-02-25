@@ -15,32 +15,45 @@
     <tr>
         <th>Navn</th>
         <th class="description-column">Beskrivelse</th>
+        <th>By</th>
         <th></th>
+        <th></th> <!-- Tilføjet kolonne for Opdater knap -->
+        <th></th> <!-- Tilføjet kolonne for Slet knap -->
+
     </tr>
 
     <tr th:each="attraction : ${attractions}">
         <td>
-            <a th:href="@{'attractions/' + ${attraction.name}}">
+            <a th:href="@{'/attractions/' + ${attraction.name}}">
                 <span th:text="${attraction.name}">Attraktion Navn</span>
             </a>
         </td>
         <td th:text="${attraction.description}" class="description-column">Attraktion Beskrivelse</td>
+        <td th:text="${attraction.city}"></td>
         <td>
-            <a th:href="@{'attractions/' + ${attraction.name} + '/tags'}">
+            <a th:href="@{'/attractions/' + ${attraction.name} + '/tags'}">
                 <button type="button">Tags</button>
             </a>
+        </td>
+        <td>
+            <button type="button">Opdater</button>
+        </td>
+        <td>
+            <button type="button">Slet</button>
         </td>
     </tr>
 </table>
 
-<button type="submit">Tilføj Attraktion</button>
+<a th:href="@{/addAttraction}">
+    <button type="button">Tilføj Attraktion</button>
+</a>
 
 <div th:if="${tags}">
     <h2>Tags for Attraktion</h2>
     <ul>
         <li th:each="tag : ${tags}" th:text="${tag}"></li>
     </ul>
-    <a href="attractions">Tilbage</a>
+    <a th:href="@{/attractions}">Tilbage</a>
 </div>
 
 </body>

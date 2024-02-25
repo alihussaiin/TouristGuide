@@ -29,10 +29,11 @@ public class TouristController {
         return "attractionList"; // Returnerer navnet på Thymeleaf-skabelonen
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     public String createAttraction(@ModelAttribute TouristAttraction attraction) {
         touristService.createAttraction(attraction);
         return "redirect:/attractions"; // Redirect til GET /attractions for at vise alle turistattraktioner
+
     }
 
     @GetMapping("/description/{description}")
@@ -111,6 +112,7 @@ public class TouristController {
         touristService.createAttraction(attraction);
         return "redirect:/attractions";
     }
+
 
 
 }

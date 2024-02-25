@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Attraction</title>
+</head>
+
+<body>
+
+<h1>Add Attraction</h1>
+
+<form action="/save" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description"></textarea><br>
+    <label for="city">City:</label><br>
+    <input type="text" id="city" name="city"><br>
+    <label for="tags">Tags (comma separated):</label><br>
+    <input type="text" id="tags" name="tags"><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+
+</html>

@@ -85,5 +85,12 @@ public class TouristRepository {
         }
         return null;
     }
+    public List<String> getby() {
+        return getby();
+
+    }
+    public List<String> getTags() {
+        return getTags();
+    }
 
 }
