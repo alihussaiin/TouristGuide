@@ -32,7 +32,7 @@ public class TouristController {
     @GetMapping("/add")
     public String createAttraction(@ModelAttribute TouristAttraction attraction) {
         touristService.createAttraction(attraction);
-        return "redirect:/attractions"; // Redirect til GET /attractions for at vise alle turistattraktioner
+        return "redirect:/addAttraction"; // Redirect til GET /attractions for at vise alle turistattraktioner
 
     }
 
