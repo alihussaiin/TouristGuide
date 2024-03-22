@@ -1,6 +1,7 @@
 package com.example.touristguide.controller;
 
 import com.example.touristguide.model.TouristAttraction;
+import com.example.touristguide.model.TouristAttractionDB;
 import com.example.touristguide.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,25 +9,28 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("attractions")
+@RestController
+@RequestMapping("/attractions")
 public class TouristController {
 
 
     private final TouristService touristService;
+    private final TouristAttractionService touristAttractionService;
 
-    public TouristController(TouristService touristService) {
+    public TouristController(TouristService touristService, TouristAttractionService touristAttractionService) {
 
         this.touristService = touristService;
+        this.touristAttractionService = touristAttractionService;
     }
 
     // CREATE endpoints
 
-    @GetMapping("")
-    public String getAllAttractions(Model model) {
-        List<TouristAttraction> attractions = touristService.getAllAttractions();
-        model.addAttribute("attractions", attractions);
-        return "attractionList"; // Returnerer navnet på Thymeleaf-skabelonen
+    @GetMapping
+    public List<TouristAttractionDB> getAllAttractions(Model model) {
+        List<TouristAttractionDB> attractions = touristAttractionService.getAllTouristAttractions();
+        return attractions;
+        //model.addAttribute("attractions", attractions);
+        //return "attractionList"; // Returnerer navnet på Thymeleaf-skabelonen
     }
 
     @GetMapping("/add")
