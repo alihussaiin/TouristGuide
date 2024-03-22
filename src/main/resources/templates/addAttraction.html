@@ -10,7 +10,7 @@
 
 <h1>Add Attraction</h1>
 
-<form action="/save" method="post">
+<form th:action="@{/attractions/add}" th:object="${attraction}" method="post">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name"><br>
     <label for="description">Description:</label><br>
