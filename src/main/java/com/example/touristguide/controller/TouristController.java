@@ -117,6 +117,5 @@ public class TouristController {
         return "redirect:/attractions";
     }
 
-
-
 }
+//

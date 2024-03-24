@@ -1,6 +1,6 @@
 INSERT INTO tourist_db.tag (id, name) VALUES (1, 'Forlystelse');
 INSERT INTO tourist_db.tag (id, name) VALUES (2, 'Sport');
-INSERT INTO tourist_db.tag (id, name) VALUES (3, 'Kultur');
+    INSERT INTO tourist_db.tag (id, name) VALUES (3, 'Kultur');
 INSERT INTO tourist_db.tag (id, name) VALUES (4, 'Shoppingcenter');
 INSERT INTO tourist_db.tag (id, name) VALUES (5, 'Seværdighed');
 
